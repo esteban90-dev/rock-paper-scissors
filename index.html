@@ -10,34 +10,49 @@
         
         <script>
 
-            function computerPlay(){
+            
 
-                let x = Math.floor(Math.random()*3) + 1;        //random # between 1 and 3
+            function computerSelection(){                           //returns 'rock', 'paper', or 'scissors' randomly.
 
-                switch(x){
-                    case 1:
-                        return 'Rock';
-                        break;
-
-                    case 2:
-                        return 'Paper';
-                        break;
-                    
-                    case 3:
-                        return 'Scissors';
-                        break;
-                }
-
+                return computerSelection = Math.floor(Math.random()*3) + 1;                
             }
 
-            console.log(computerPlay());
+            
 
+            function playerSelection(){                                //player selects 'rock', 'paper', or 'scissors' - function returns corresponding #
 
+                let userInput;
+                let userInputLower;
+                let userInputVal;
+                let retryFlag;
+                
+                userInput = prompt('Enter Rock, Paper, or Scissors.');
+                userInputLower = userInput.toLowerCase();
 
+                switch(userInputLower){
+                    case 'rock':
+                        userInputVal = 1;
+                        break;
 
+                    case 'paper':
+                        userInputVal = 2;
+                        break;
 
+                    case 'scissors':
+                        userInputVal = 3;
+                        break;
 
+                    default:
+                        console.log('Invalid entry. Try again!');
+                        return playerSelection();                       //call the function again until the user gets the input right
+                }
 
+                return userInputVal;
+            }
+                            
+            
+            console.log(computerSelection());
+            console.log(playerSelection());
 
 
 
