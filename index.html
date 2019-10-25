@@ -10,16 +10,13 @@
         
         <script>
 
-            
-
-            function computerSelection(){                           //returns 'rock', 'paper', or 'scissors' randomly.
+            function computerSelection(){                               //returns 'rock', 'paper', or 'scissors' randomly.
 
                 return computerSelection = Math.floor(Math.random()*3) + 1;                
             }
 
-            
 
-            function playerSelection(){                                //player selects 'rock', 'paper', or 'scissors' - function returns corresponding #
+            function playerSelection(){                                 //player selects 'rock', 'paper', or 'scissors' - function returns corresponding #
 
                 let userInput;
                 let userInputLower;
@@ -27,7 +24,7 @@
                 let retryFlag;
                 
                 userInput = prompt('Enter Rock, Paper, or Scissors.');
-                userInputLower = userInput.toLowerCase();
+                userInputLower = userInput.toLowerCase();   
 
                 switch(userInputLower){
                     case 'rock':
@@ -49,16 +46,52 @@
 
                 return userInputVal;
             }
+
+
+
+            function rockPaperScissors(p1,p2){
+
+                let playerIn = p1;
+                let computerIn = p2;
+
+                if ( (playerIn == 1) && (computerIn == 2) ){
+                    return 'Computer is the winner - Paper beats Rock';
+                } 
+
+                else if ( (playerIn == 1) && (computerIn == 3) ){
+                    return 'Player is the winner - Rock beats Scissors';
+                }
+
+                else if ( (playerIn == 2) && (computerIn == 1) ){
+                    return 'Player is the winner - Paper beats Rock';
+                } 
+
+                else if ( (playerIn == 2) && (computerIn == 3) ){
+                    return 'Computer is the winner - Scissors beats Paper';
+                } 
+
+                else if ( (playerIn == 3) && (computerIn == 1) ){
+                    return 'Computer is the winner - Rock beats Scissors';
+                } 
+
+                else if ( (playerIn == 3) && (computerIn == 2) ){
+                    return 'Player is the winner - Scissors beat Paper';
+                }
+
+                else {
+                    return 'Match is a tie, play again!';
+                }
+
+            }
                             
             
-            console.log(computerSelection());
-            console.log(playerSelection());
+            let userIn = playerSelection();                             //get the player selection and display it
+            console.log('Player Selection is: ' + userIn);
 
+            let compIn = computerSelection();
+            console.log('Computer Selection is: ' + compIn);            //get the computer selection and display it
 
-
-
-
-
+            console.log(rockPaperScissors(userIn,compIn));              //play a round of the game
 
         </script>
 
