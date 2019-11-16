@@ -1,14 +1,72 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
     color: rgb(88, 88, 88);
+    
 }
 
-.Heading,.Heading{
+button{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.Main{
+    border:solid 1px;
+    border-radius: 5px;
+    border-color:rgb(224, 223, 223);
+    margin-left:auto;
+    margin-right:auto;
     text-align:center;
+    width:600px;
+}
+
+.Heading{
+    text-align:center;
+    margin-top:50px;
+    margin-bottom:30px;
 }     
 
 
 .button-wrapper{
+    text-align:center;
+    margin-top:75px;
+    margin-bottom:50px;
+}
+
+
+.selection-display,.scorebox{
+    margin-left:auto;
+    margin-right:auto;
     margin-top:50px;
     text-align:center;
 }
+
+.selection-display:after,.scorebox:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.select-left,.select-center,.select-right{
+    float:left;
+    width:200px;
+}
+
+.scorebox-left,.scorebox-right{
+    float:left;
+    width:300px;
+}
+
+.computer-select,.player-select,.result{
+    margin-top:20px;
+    margin-bottom:100px;
+    font-size:10pt;
+}
+
+.computer-score,.player-score{
+    margin-top:20px;
+    margin-bottom:100px;
+    font-size:50pt;
+}
+
+
+

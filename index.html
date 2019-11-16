@@ -7,113 +7,62 @@
     </head>
 </html>
 
-    <body>
-        <div class="Heading">
-            <h1>Rock, Paper, Scissors</h1>
-            <h5>Click a button to begin playing - first to win 5 rounds wins the game!</h5>
+<body>
+    <div class="Heading">
+        <h1>Rock, Paper, Scissors</h1>
+    </div>
+    
+
+    <div class="Main">
+
+        <h5>Click a button to begin playing - first to get 5 points wins the game!</h5>
+
+        <div class="button-wrapper">
+            <button type="button">Rock</button>
+            <button type="button">Paper</button> 
+            <button type="button">Scissors</button>  
         </div>
-        
 
-        <div class="Main">
-
-            <div class="button-wrapper">
-                <button type="button">Rock</button>
-                <button type="button">Paper</button> 
-                <button type="button">Scissors</button>  
+        <div class="selection-display">
+            <div class="select-left">
+                <h5>Computer Selection</h5>
+                <div class="computer-select">
+                    ---
+                </div>
             </div>
-
-                <script>
-
-                        function computerSelection(){                               //returns 'rock', 'paper', or 'scissors' randomly.
-                            let compVal;
-            
-                            compVal = Math.floor(Math.random()*3) + 1;
-                            
-                            switch(compVal){
-                                case 1:
-                                    console.log('Computer chose Rock.');
-                                    break;
-            
-                                case 2:
-                                    console.log('Computer chose Paper');  
-                                    break;
-            
-                                default:
-                                    console.log('Computer chose Scissors');  
-                            }
-            
-                            return compVal;
-            
-                        }
-            
-            
-            
-                        function playRound(p1,p2){
-            
-                            let playerIn = p1;
-                            let computerIn = p2;
-            
-                            if ( (playerIn == 'Rock') && (computerIn == 2) ){
-                                console.log('Computer wins the round - Paper beats Rock');
-                                return 1;
-                            } 
-            
-                            else if ( (playerIn == 'Rock') && (computerIn == 3) ){
-                                console.log('Player wins the round - Rock beats Scissors');
-                                return 2;
-                            }
-            
-                            else if ( (playerIn == 'Paper') && (computerIn == 1) ){
-                                console.log('Player wins the round - Paper beats Rock');
-                                return 2;
-                            } 
-            
-                            else if ( (playerIn == 'Paper') && (computerIn == 3) ){
-                                console.log('Computer wins the round - Scissors beats Paper');
-                                return 1;
-                            } 
-            
-                            else if ( (playerIn == 'Scissors') && (computerIn == 1) ){
-                                console.log('Computer wins the round - Rock beats Scissors');
-                                return 1;
-                            } 
-            
-                            else if ( (playerIn == 'Scissors') && (computerIn == 2) ){
-                                console.log('Player wins the round - Scissors beat Paper');
-                                return 2;
-                            }
-            
-                            else {
-                                console.log('Round is a tie');
-                                return 3;
-                            }
-            
-                        }
-
-                        
-                        //Add event listeners to the rock/paper/scissors buttons
-                        let x;
-                        let btn = document.querySelectorAll('button'); 
-                        for(x = 0; x < btn.length; x++){
-                            btn[x].addEventListener('click',clickBtn);
-                        }
-
-                        function clickBtn(e){
-                            let playerIn = e.target.firstChild.data;
-                            let computerIn = computerSelection();
-                            playRound(playerIn,computerIn);
-                        }
-
-
-
-
-            
-                </script>
-
+            <div class="select-center">
+                <h5>Result</h5>
+                <div class="result">
+                    ---
+                </div>
+            </div>
+            <div class="select-right">
+                <h5>Player Selection</h5>
+                <div class="player-select">
+                    ---
+                </div>
+            </div>
         </div>
-        
-        
 
-    </body>
+        <div class="scorebox">
+            <div class="scorebox-left">
+                <h5>Computer Score</h5>
+                <div class="computer-score">
+                    0
+                </div>
+            </div>
+            <div class="scorebox-right">
+                <h5>Player Score</h5>
+                <div class="player-score">
+                    0
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/script.js"></script>
+
+    </div>
+
+</body>
 
 </html>
